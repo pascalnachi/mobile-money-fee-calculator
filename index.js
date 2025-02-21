@@ -1,3 +1,16 @@
+document.addEventListener("DOMContentLoaded",function () {
+    const text="Simple is better";
+    let i=0;
+    function typeEffect(){
+        if (i < text.length) {
+            document.getElementById("typing-text").textContent += text.charAt(i);
+            i++;
+            setTimeout(typeEffect,100);
+        }
+    }
+    typeEffect();
+});
+
 document.getElementById('feeForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -15,11 +28,12 @@ document.getElementById('feeForm').addEventListener('submit', function(event) {
     let fee = 0;
 
     if (network === "orange") {
-        if (amount <= 5) fee = amount * 0.18;
-        else if (amount <= 10) fee = amount * 0.0876;
-        else if (amount <= 20) fee = amount * 0.0553;
-        else if (amount <= 50) fee = amount * 0.028;
-        else if (amount <= 100) fee = amount * 0.0177;
+        if (amount <= 5) fee = amount * 0.175;
+        else if (amount <= 10) fee = amount * 0.087;
+        else if (amount <= 20) fee = amount * 0.054;
+        else if (amount <= 30) fee = amount * 0.028;
+        else if (amount <= 50) fee = amount * 0.0275;
+        else if (amount <= 100) fee = amount * 0.0175;
         else if (amount <= 400) fee = amount * 0.016;
         else if (amount <= 2500) fee = amount * 0.0095;
         else fee ="Enter an amount less than 2500";
